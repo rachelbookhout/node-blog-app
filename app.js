@@ -4,3 +4,6 @@ var boot = function(){
     console.info('Express server listening on port' + app.get('port');
   });
 }
+var shutown = function(){
+  server.close();
+}
