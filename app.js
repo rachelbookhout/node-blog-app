@@ -7,3 +7,12 @@ var boot = function(){
 var shutown = function(){
   server.close();
 }
+if (require.main == module){
+  boot();
+}
+else {
+  console.info('Running app as a module');
+  exports.boot = boot;
+  exports.shutdown = shutdown;
+  exports.port = app.get('port');
+}
